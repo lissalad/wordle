@@ -1,16 +1,16 @@
 import Tile from "./Tile";
 import SecretWord from "./Tile";
 import data from "../word-bank"
+import Guess from "./Guess";
 
 function Row(props) {
-  const { secret } = props;
-  let row = secret.split("")
-  // for(let letter = 0; letter < secret.length; letter += 1) {
-console.log(row)
-  // }
-  const rowMarkup = row.map((letter) => {
+  // const { letter, status } = props;
+  const guess = "fishy"
+  let row = guess.split("");
+
+  const rowMarkup = row.map((letter, i) => {
     return (
-      <Tile letter={letter} status="wrong"/>
+      <Tile key={i} letter={letter} status="wrong"/>
     )
   })
 
@@ -18,6 +18,7 @@ console.log(row)
     <div className="flex flex-row justify-center space-x-1 w-full">
       { rowMarkup }
     </div>
+    
   );
 }
 

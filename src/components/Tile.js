@@ -1,10 +1,14 @@
 function Tile(props) {
   const { letter, status } = props
+//let
+//  status = "correct"
 
   let color = "";
-  if (status === "correct") color = "bg-lime-500";
-  else if (status === "wrong") color = "bg-rose-400";
-  else if (status === "misplaced") color = "bg-yellow-500";
+  if (status === "correct"){ color = "bg-lime-500";}
+  else if (status === "wrong"){ color = "bg-rose-400";}
+  else if (status === "misplaced") {color = "bg-yellow-500";}
+  else if (status === "empty") {color = "bg-slate-500";}
+
 
   color += " w-12 h-12 rounded flex justify-center items-center text-3xl"
   

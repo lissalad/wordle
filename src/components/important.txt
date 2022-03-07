@@ -1,0 +1,29 @@
+  function onClick() {
+    let guess = guessRef.current.value;
+    evaluateGuess(guess, secret);
+  }
+
+  function evaluateGuess(word, secret) {
+    // check if won
+    if (word === secret) {
+      return "win";
+    }
+
+    // start looping
+    let present = false;
+    let status = "";
+    for (let letter = 0; letter < secret.length; letter += 1) {
+      if (word.charAt(letter) === secret.charAt(letter)) {
+        status = "correct";
+        present = true;
+        console.log(word.charAt(letter) + " is correct");
+      } else if (secret.includes(word.charAt(letter))) {
+        status = "misplaced";
+        present = true;
+        console.log(word.charAt(letter) + " is misplaced");
+      } else {
+        status = "wrong";
+        console.log(word.charAt(letter) + " is wrong");
+      }
+    }
+  }
