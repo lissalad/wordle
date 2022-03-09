@@ -1,12 +1,12 @@
 import { useState, useRef } from "react";
 import Row from "./Row";
 
-function Guess({ onSetResult }) {
+function Guess({ onSetGuess }) {
   const guessRef = useRef();
 
   function onClick() {
     let guess = guessRef.current.value;
-    onSetResult(guess);
+    onSetGuess(guess);
     // console.log(guess);
   }
 

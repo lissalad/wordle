@@ -18,8 +18,8 @@ export function evaluate(guess, answer) {
       else if (letter === answer[i]) {
         status = "correct";
         console.log(letter + " is correct");
-        
-        // misplaced ! 
+
+      // misplaced ! 
       } else {
         status = "misplaced";
         console.log(letter + " is misplaced");
@@ -27,6 +27,7 @@ export function evaluate(guess, answer) {
       results.push([letter, status]);
     }
   }
+  console.log(results)
   return results;
 }
 
